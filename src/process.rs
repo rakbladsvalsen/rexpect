@@ -110,7 +110,6 @@ impl PtyProcess {
                 // assign stdin, stdout, stderr to the tty, just like a terminal does
                 dup2(slave_fd, STDIN_FILENO)?;
                 dup2(slave_fd, STDOUT_FILENO)?;
-                dup2(slave_fd, STDERR_FILENO)?;
 
                 // Avoid leaking slave fd
                 if slave_fd > STDERR_FILENO {
